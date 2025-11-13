@@ -29,3 +29,15 @@ systemctl get-default
 ```
 systemctl set-default multi-user.target
 ```
+
+#### 系统启动流程
+1. 打开硬件电源
+2. 开机自检(BIOS
+3. 系统引导程序(MBR,GPT
+4. 选择GRUB菜单
+5. 加载系统内核
+6. 初始化PID为1的systemd进程
+7. 读取系统运行级别
+8. 加载服务配置文件
+9. 并行启动系统服务
+10. 进入终端

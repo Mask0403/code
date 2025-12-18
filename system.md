@@ -5,8 +5,10 @@
 ```
 `命令`可以优先执行
 ```
-
-ntpdate ntp.aliyun.comupdate
+#### 时间同步
+```
+ntpdate ntp.aliyun.com
+```
 
 `file`查看文件类型
 `stat`查看文件状态

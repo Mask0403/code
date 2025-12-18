@@ -47,3 +47,4 @@ new> cp -t /opt/chrony.conf(目标文件) /etc/chrony.conf(源文件)
 
 `sudo -l`列出具有sudo权限
 sudoers中可以设置NOPASSWD:`命令路径`
+ntpdate ntp.aliyun.com

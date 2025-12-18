@@ -6,6 +6,8 @@
 `命令`可以优先执行
 ```
 
+ntpdate ntp.aliyun.comupdate
+
 `file`查看文件类型
 `stat`查看文件状态
 
@@ -47,4 +49,3 @@ new> cp -t /opt/chrony.conf(目标文件) /etc/chrony.conf(源文件)
 
 `sudo -l`列出具有sudo权限
 sudoers中可以设置NOPASSWD:`命令路径`
-ntpdate ntp.aliyun.com

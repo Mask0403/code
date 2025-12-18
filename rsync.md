@@ -45,4 +45,5 @@ chmod 600 /etc/rsync.server
 useradd -s /sbin/nologin -M rsync
 mkdir /data/
 chown rsync:rsync /data
+systemctl enable rsyncd
 ```

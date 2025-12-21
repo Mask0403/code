@@ -12,7 +12,8 @@ chown -R nfsnobody:nfsnobody /nfs131/
 3. 修改nfs配置文件
 ```
 # 修改的配置文件为/etc/exports,实际配置文件为/var/lib/nfs/etab
-/nfs131/   172.16.10.0/24(rw)
+echo '/nfs131/   172.16.10.0/24(rw)' >/etc/exports
+chmod 600 /etc/exports
 ```
 4. 启动服务
 ```

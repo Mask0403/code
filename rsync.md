@@ -16,6 +16,7 @@ rsync -avz -e "ssh -p port" --password-file=path --exclude=file --delete source-
 
 
 #### rsync-server
+`修改配置文件/etc/rsyncd.conf`
 ```
 # rsyncd.conf
 fake super =yes

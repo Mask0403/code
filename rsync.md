@@ -46,4 +46,5 @@ useradd -s /sbin/nologin -M rsync
 mkdir /data/
 chown rsync:rsync /data
 systemctl enable rsyncd
+systemctl start rsyncd
 ```

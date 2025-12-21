@@ -50,3 +50,5 @@ echo '172.16.10.131:/nfs/ /nfs/                                 nfs     defaults
 # rc.local只需要将挂载命令写入/etc/rc.local中,再将/etc/rc.d/rc.local赋予执行权限即可
 ```
 `如果永久挂载后没有优先启动nfs服务端,则需等待几分钟`
+
+#### Lsyncd实时同步TODO

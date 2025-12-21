@@ -5,7 +5,7 @@ yum install -y rpcbind nfs-utils
 ```
 2. 设置共享目录,更改所有者
 ```
-mkdir /data
+mkdir /nfs
 # 安装nfs-utils后自动添加nfsnobody用户
 chown -R nfsnobody:nfsnobody /data
 ```

@@ -15,6 +15,10 @@ chown -R nfsnobody:nfsnobody /nfs131/
 echo '/nfs131/   172.16.10.0/24(rw)' >/etc/exports
 chmod 600 /etc/exports
 ```
+#### 用户压缩(可选)
+- all_squash
+- annouid
+- annogid
 4. 启动服务
 ```
 # 优先启动rpcbind
@@ -36,7 +40,7 @@ yum install -y nfs-utils
 ```
 mkdir /nfs131/
 chown -R nfsnobody:nfsnobody /nfs131/
-mount -t nfs 172.16.10.131:/nfs131/ /nfs131/
+mount -o noexec,nosuid,nodev -t nfs 172.16.10.131:/nfs131/ /nfs131/
 ```
 3. 永久挂载
 `永久挂载后要优先启动nfs服务端`

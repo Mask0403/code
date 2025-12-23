@@ -13,6 +13,18 @@ log_path = /var/log/ansible.log
 2. 设置主机清单
 ```
 # 主机清单文件位置在/etc/ansible/hosts,可以使用ini格式和yaml,推荐yaml简洁明了,yaml不能使用tab进行缩进
+# ini
+[test]
+test241
+domain
+ip
+# 将多个组集中在一起
+[group-name:children]
+collection-name
+```
+---
+```
+# yaml
 test:
   hosts:
     test241
@@ -23,8 +35,9 @@ test:
       ansible_password:passwd
       ansible_ssh_private_key_file:key--file
 # 将多个组集中在一起
-[group-name:children]
-collection-name
+new-group:
+  children:
+    group-name
 ```
 --- 
 #### ansible模块

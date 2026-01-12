@@ -6,7 +6,7 @@ https://docs.ansible.com/projects/ansible/latest/index.html
 ```
 1. 下载软件包,修改配置
 ```
-yum install -y ansible
+yum install -y sshpass ansible
 # 配置文件在/etc/ansible/ansible.cfg
 host_key_checking = False
 log_path = /var/log/ansible.log
@@ -31,10 +31,10 @@ collection-name
 # yaml
 test:
   hosts:
-    test241
+    test241:
     domain:
     ip:
-      nsible_host: host
+      ansible_host: host
       ansible_user: user
       ansible_password: passwd
       ansible_ssh_private_key_file: key--file

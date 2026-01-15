@@ -240,3 +240,27 @@ file: Ubuntu
 ```
 - 是with_items不是with_item
 - with_items与模块平级
+--- 
+#### ansible文件包含
+1. include文件包含
+```
+# 13-include.yml
+---
+- name: test loops
+  hosts: all
+  tasks:
+    - tags: include
+      include_tasks:
+        file: ./13-sub.yml
+
+...
+```
+```
+# 13-sub.yml
+- name: loop
+  ansible.builtin.debug:
+    msg: "{{item}}"
+  with_items:
+    - text
+    - audio
+```

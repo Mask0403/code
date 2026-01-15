@@ -204,5 +204,39 @@ file: Ubuntu
 ...
 ```
 - when与模块平级
-2. loops循环
+2. loop循环
+```
+---
+- name: test loops
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: loop
+      ansible.builtin.debug:
+        msg: "{{item}}"
 
+      loop:
+        - text
+        - audio
+...
+```
+- 是loop不是loops
+- loop与模块平级
+3. with_items循环
+```
+---
+- name: test loops
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: loop
+      ansible.builtin.debug:
+        msg: "{{item}}"
+
+      with_items:
+        - text
+        - audio
+...
+```
+- 是with_items不是with_item
+- with_items与模块平级

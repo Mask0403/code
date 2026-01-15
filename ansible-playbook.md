@@ -162,3 +162,47 @@ file: Ubuntu
 - register也只能作用于单剧本中
 - register用来存储命令执行结果
 - 取变量结果为var-name.stdout
+--- 
+#### ansible监听器
+```
+---
+- hosts: test
+  gather_facts: false
+  tasks:
+    - name: copy file notify
+      ansible.builtin.copy:
+        src: ./template/target
+        dest: /tmp/target
+        backup: true
+      notify:
+        - turn
+  handlers:
+    - name: turn
+      ansible.builtin.debug:
+        msg: handler1 start
+...
+```
+- notify与模块平级
+- handlers不是handler
+- handlers与tasks平级
+---
+#### ansible流程控制
+1. when判断
+```
+---
+- name: switch yum apt
+  hosts: all
+  tasks:
+    - name: match redhat
+      ansible.builtin.debug:
+        msg: this is Centos
+      when: ansible_distribution is match("Centos")
+    - name: match Ubuntu
+      ansible.builtin.debug:
+        msg: thisi is Ubuntu
+      when: ansible_distribution is match("Ubuntu")
+...
+```
+- when与模块平级
+2. loops循环
+
